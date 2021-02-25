@@ -1,0 +1,123 @@
+<div class="container mt-5">
+    <div class="border">
+        <button class="btn btn-md btn-outline-primary" (click)="open(content)">
+          <i class="fa fa-user"></i>New candidate</button>
+    </div>
+
+    <div class="container text-center">
+      <div
+        [ngClass]="{
+          'spinner-border': toggle,
+          '': !toggle
+        }"></div>
+    </div>
+    
+    <table class="table table-bordered table-striped">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Date of birth</th>
+        <th>Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let candidate of candidates">
+        <td><span>{{candidate.id}}</span></td>
+        <td><span>{{candidate.first_name}}</span></td>
+        <td><span>{{candidate.last_name}}</span></td>
+        <td><span>{{candidate.email}}</span></td>
+        <td><span>{{candidate.phone}}</span></td>
+        <td><span>{{candidate.year_of_birth}}-{{candidate.month_of_birth}}-{{candidate.day_of_birth}}</span></td>
+
+        <td>
+            <button class="btn btn-sm btn-info">
+              <i class="fa fa-search"></i>Skills</button>
+            <button class="btn btn-sm btn-warning">
+              <i class="fa fa-edit"></i>Edit</button>
+            <button class="btn btn-sm btn-danger">
+              <i class="fa fa-remove"></i>Delete</button>
+          </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">New candidate</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+        <div class="form-group">
+          <div class="row">
+            <div class="col">
+
+              <label for="first_name">First name</label>
+              <div class="input-group">
+                <input id="first_name" name="first_name" class="form-control" ngModel>
+              </div>
+            </div>
+
+            <div class="col">
+              <label for="last_name">Last name</label>
+              <div class="input-group">
+                <input id="first_name" name="last_name" class="form-control" ngModel>
+              </div>
+            </div>
+
+          </div>
+          
+            <div class="row">
+              <div class="col">
+                <label for="phone">Phone</label>
+                <div class="input-group">
+                  <input id="phone" name="phone" class="form-control" ngModel>
+                </div>
+              </div>
+              <div class="col">
+                <label for="email">Email</label>
+                <div class="input-group">
+                    <input id="email" name="email" class="form-control" ngModel>
+                </div>
+              </div>
+
+            </div>
+            
+
+            <label>Birth date</label>
+            <div class="row">
+              <div class="col">
+                <div class="input-group">
+                  <input id="year_of_birth" name="year_of_birth" class="form-control" ngModel>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group">
+                  <input id="month_of_birth" name="month_of_birth" class="form-control" ngModel>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-group">
+                  <input id="day_of_birth" name="day_of_birth" class="form-control" ngModel>
+                </div>
+              </div>
+
+            </div>
+                 
+        </div>
+        <div class="border text-center">
+          <button data-dismiss="modal" class="btn btn-info">Submit</button>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
+    </div>
+  </ng-template>
