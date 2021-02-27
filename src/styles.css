@@ -45,7 +45,7 @@
 
   #loadnig_icon_home{
     position: relative;
-    top:15vh;
+    top:8vh;
   }
 
   #main_form{
@@ -57,5 +57,9 @@
     min-width: 300px;
     max-width: 50vh;
     width: 100%;
+  }
 
+  .home_empty_search{
+    position: relative;
+    top:20vh;
   }

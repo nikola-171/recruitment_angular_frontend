@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit {
   /*candidate search */
   searchCandidate(){
     
-    if(this.first_name === '' || this.last_name === '' || this.skill === ''){
+    if(this.first_name === '' && this.last_name === '' && this.skill === ''){
       alert('empty fields are not allowed');
     }else{
       this.toggle = true;
@@ -49,6 +49,7 @@ export class HomeComponent implements OnInit {
             var div = document.createElement('div');
             div.classList.add('alert');
             div.classList.add('alert-info');
+            div.classList.add('home_empty_search');
   
             var h4 = document.createElement('h4');
             h4.classList.add('h4');
