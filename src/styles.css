@@ -20,3 +20,42 @@
   #button_show_all{
     width: 200px;
   }
+
+  #table{
+    display: none;
+  }
+
+  #empty_records_message{
+    position: relative;
+    top:20vh;
+    display: none;
+  }
+
+  #search_form{
+    min-width: 300px;
+    max-width: 50vh;
+    width: 100%;
+
+  }
+
+  #loadnig_icon{
+    position: relative;
+    top:30vh;
+  }
+
+  #loadnig_icon_home{
+    position: relative;
+    top:15vh;
+  }
+
+  #main_form{
+    position: relative;
+    top:8vh;
+  }
+
+  #add_skill_form{
+    min-width: 300px;
+    max-width: 50vh;
+    width: 100%;
+
+  }
