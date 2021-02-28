@@ -146,9 +146,6 @@ export class CandidatesComponent implements OnInit {
     this.toggle = false;
     alert("Could not complete request, please try again later.");
     
-    if(error.status === 0){
-      alert('could not connect, please try again later');
-    }
     if (error.error instanceof ErrorEvent) {
 
       // A client-side or network error occurred. Handle it accordingly.

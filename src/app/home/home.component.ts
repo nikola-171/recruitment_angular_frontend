@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
 
   /*candidate search */
   searchCandidate(){
-    
     if(this.first_name === '' && this.last_name === '' && this.skill === ''){
       alert('empty fields are not allowed');
     }else{
@@ -122,12 +121,13 @@ export class HomeComponent implements OnInit {
             });
           }
         });
-    }
+     }
   }
 
   handleError(error: HttpErrorResponse) {
+    
     alert("Could not complete request, please try again later.");
-    this.toggle = false;
+    
     if (error.error instanceof ErrorEvent) {
 
       // A client-side or network error occurred. Handle it accordingly.
@@ -139,9 +139,11 @@ export class HomeComponent implements OnInit {
         `Backend returned code ${error.status}, ` +
         `body was: ${error.error}`);
     }
+    this.toggle = false;
     // return an observable with a user-facing error message
     return throwError(
       'Something bad happened; please try again later.');
+      
   };
 
 }
